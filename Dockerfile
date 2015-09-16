@@ -5,9 +5,29 @@ RUN pacman -Sy --noconfirm && \
     pacman-db-upgrade
 RUN pacman -Su --noconfirm
 RUN pacman -S --noconfirm \
-    base-devel gcc clang cuda python leveldb lmdb git cmake \
-    qt5-base qt5-3d protobuf boost hdf5 opencv yajl \
-    gcc-fortran automake google-glog gflags snappy openssh
+    base-devel \
+    gcc \
+    clang \
+    cuda \
+    nvidia \
+    python \
+    leveldb \
+    lmdb \
+    git \
+    cmake \
+    qt5-base \
+    qt5-3d \
+    protobuf \
+    boost \
+    hdf5 \
+    opencv \
+    yajl \
+    gcc-fortran \
+    automake \
+    google-glog \
+    gflags \
+    snappy \
+    openssh
 
 RUN groupadd -r yaourt
 RUN useradd -r -G wheel -g yaourt yaourt
