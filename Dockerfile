@@ -9,10 +9,6 @@ RUN pacman -S --noconfirm \
     qt5-base qt5-3d protobuf boost hdf5 opencv yajl \
     gcc-fortran automake google-glog gflags snappy openssh
 
-
-
-COPY install_yaourt.sh /usr/bin/install_yaourt.sh
-
 RUN groupadd -r yaourt
 RUN useradd -r -G wheel -g yaourt yaourt
 RUN mkdir /tmp/yaourt
