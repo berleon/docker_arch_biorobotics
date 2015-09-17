@@ -1,15 +1,16 @@
 FROM base/archlinux
 RUN pacman-key --init && pacman-key --populate archlinux && pacman-key --refresh-keys
 RUN pacman -Sy --noconfirm && \
-    pacman -S pacman openssl --noconfirm && \
+    pacman -S pacman --noconfirm && \
     pacman-db-upgrade
-RUN pacman -Su --noconfirm
+RUN pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm \
     base-devel \
     gcc \
     clang \
     cuda \
     nvidia \
+    nvidia-libgl \
     python \
     leveldb \
     lmdb \
